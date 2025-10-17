@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
          />
 
-
+<!-- mostra o valor numérico do dado -->
 <TextView
     android:id="@+id/txtViewValorDado"
     android:layout_width="wrap_content"
@@ -24,10 +24,26 @@
     android:text=""
     android:textSize="60sp"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/txtViewValorDadoPorExtenso"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintBottom_toTopOf="@id/imgViewDado"
+    app:layout_constraintHorizontal_chainStyle="packed"
     />
+
+
+<!-- mostra o valor do dado por extenso -->
+    <TextView
+        android:id="@+id/txtViewValorDadoPorExtenso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="60sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txtViewValorDado"
+        app:layout_constraintBottom_toTopOf="@id/imgViewDado"
+        />
+
 
     <ImageView
         android:id="@+id/imgViewDado"

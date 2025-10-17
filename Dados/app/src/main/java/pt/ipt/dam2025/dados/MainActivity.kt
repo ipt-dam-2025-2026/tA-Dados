@@ -41,12 +41,13 @@ class MainActivity : AppCompatActivity() {
      * Roda o dado e atualiza a imagem correspondente
      */
     private fun rodarDado() {
-       /* Algoritmo
-          1- gerar num. aletório [1;6]
-          2- determinar a imagem a mostrar em função do num. gerado
-          3- mostrar a imagem correspondente
-          4- atualizar o texto com o num. gerado
-        */
+        /* Algoritmo
+           1- gerar num. aletório [1;6]
+           2- determinar a imagem a mostrar em função do num. gerado
+           3- mostrar a imagem correspondente
+           4- atualizar o texto com o num. gerado
+           5- atualizar o valor por extenso correspondente ao num. gerado
+         */
 
         // 1.
         val numAleatorio = (1..6).random()
@@ -70,7 +71,19 @@ class MainActivity : AppCompatActivity() {
         // 4.
         binding.txtViewValorDado.text = numAleatorio.toString()
 
-
+        // 5.
+        val textoNumero = when (numAleatorio) {
+            1 -> R.string.n1
+            2 -> R.string.n2
+            3 -> R.string.n3
+            4 -> R.string.n4
+            5 -> R.string.n5
+            6 -> R.string.n6
+            else -> R.string.n
+        }
+        // atribuir o texto à label
+        val txt = getString(textoNumero)
+        binding.txtViewValorDadoPorExtenso.text = " ($txt)"
 
     }
 }
